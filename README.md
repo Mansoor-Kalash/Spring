@@ -23,3 +23,7 @@
 * Album
 just have a proparity
 
+* AlbumController
+
+1. addAlbum.
+2. getAllAlbums.

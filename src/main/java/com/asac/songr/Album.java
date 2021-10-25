@@ -1,8 +1,14 @@
 package com.asac.songr;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.io.Serializable;
-
-public class Album implements Serializable {
+@Entity
+public class Album {
+    @Id
+    @GeneratedValue()
+    private int id;
     private String title;
     private String artist;
     private int songCount;
@@ -15,6 +21,14 @@ public class Album implements Serializable {
         this.songCount = songCount;
         this.length = length;
         this.imageUrl = imageUrl;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
