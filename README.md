@@ -11,11 +11,15 @@
 **method**
 1. helloWorld
 2. capitalize
+3. listAlbum
 
 **route**
 
-1. /hello
-2. /capitalize
-3. /album
+1. splash page
+2. /hello
+3. /capitalize
+4. /albums
 
 * Album
+just have a proparity
+

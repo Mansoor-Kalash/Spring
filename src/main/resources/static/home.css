@@ -1,0 +1,15 @@
+/*body {*/
+/*    cursor: url('https://ionicframework.com/img/finger.png'), auto;*/
+/*}*/
+
+li,ul{
+    color: black;
+    margin-left: 70px;
+    display: inline;
+
+}
+img {
+    margin: 40px;
+    width: 200px;
+    height: 300px;
+}
