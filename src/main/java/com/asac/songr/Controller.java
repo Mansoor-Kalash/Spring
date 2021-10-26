@@ -1,12 +1,8 @@
 package com.asac.songr;
 
-
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Struct;
-import java.util.ArrayList;
-//import org.springframework.web.bind.annotation.RestController;
 
 @org.springframework.stereotype.Controller
 public class Controller {
@@ -34,13 +30,13 @@ return "helloworld";
         Album albums[] = {album1,album2};
 
         model.addAttribute("albums", albums);
-        return "album.html";
+        return "album";
     }
         @GetMapping("/")
 
     public String albums (){
 
-return "home.html";
+return "home";
 
 
         }
