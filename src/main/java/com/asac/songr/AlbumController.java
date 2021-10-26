@@ -1,3 +1,4 @@
+
 package com.asac.songr;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,6 @@ public  class AlbumController {
     AlbumRepository albumRepository;
 
     @PostMapping("/albumss")
-//    @GetMapping("/albumss")
-//@RequestMapping(value="/albumss", method= RequestMethod.POST)
     public RedirectView addAlbum(){
         Album newAlbum = new Album("ellela","amr",3,34,"https://upload.wikimedia.org/wikipedia/commons/6/66/Amr_Abdul_Baset_Diab.jpg");
         albumRepository.save(newAlbum);
@@ -28,6 +27,6 @@ public  class AlbumController {
     public String getAllAlbums(Model model){
         ArrayList<Album> albums = (ArrayList<Album>) albumRepository.findAll();
         model.addAttribute("albums", albums);
-        return "album";
+        return "albuml";
     }
 }
