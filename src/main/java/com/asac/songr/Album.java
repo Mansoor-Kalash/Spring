@@ -1,10 +1,9 @@
 package com.asac.songr;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+
 @Entity
 public class Album {
     @Id
@@ -15,10 +14,13 @@ public class Album {
     private int songCount;
     private int length;
     private String imageUrl;
-
+    @OneToMany(mappedBy ="album")
+    List<Song> songList;
     public Album() {
 
     }
+
+
 
     public Album(String title, String artist, int songCount, int length, String imageUrl) {
         this.title = title;

@@ -38,6 +38,17 @@
 
 </div>
 
+<ul>
+    <li th:each="album : ${albums}">
+        <span th:text="${albums}"></span>
+        <form method="POST" th:action="${'/albums/' + album.id + '/songs'}">
+            <input type="text" name="title" id="title"/>
+            <input type="number" name="length" id="length"/>
+            <input type="number"  name="trackNumber" id="trackNumber"/>
+            <input type="submit" />
+        </form>
+    </li>
+</ul>
 
 
 </body>
