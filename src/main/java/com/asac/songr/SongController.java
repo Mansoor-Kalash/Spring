@@ -16,13 +16,13 @@ public class SongController {
         m.addAttribute("songs", songRepository.findAll());
         return "song";
     }
-    @PostMapping("/songs")
-    public RedirectView create(
-            @RequestParam String title,
-            @RequestParam int length,
-            @RequestParam int trackNumber) {
-        Song newDino = new Song(title, length, trackNumber);
-        songRepository.save(newDino);
-        return new RedirectView("/songs");
-    }
+//    @PostMapping("/addsongs")
+//    public RedirectView create(
+//            @RequestParam String title,
+//            @RequestParam int length,
+//            @RequestParam int trackNumber) {
+//        Song newDino = new Song(title, length, trackNumber);
+//        songRepository.save(newDino);
+//        return new RedirectView("/songs");
+//    }
 }

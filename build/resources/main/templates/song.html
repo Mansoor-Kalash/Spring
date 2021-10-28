@@ -10,9 +10,7 @@
 </head>
 <body>
 <header>
-    <div>
 
-    </div>
     <ul>
         <li>Home</li>
         <li>About</li>
@@ -20,12 +18,12 @@
     </ul>
 </header>
 <main>
-    <form action="/dinosaurs" method="POST">
-        <input type="text" name="title" id="title"/>
-        <input type="number" name="length" id="length" />
-        <input type="number" name="trackNumber" id="trackNumber"/>
-        <input type="submit" />
-    </form>
+<!--    <form action="/addsongs" method="POST">-->
+<!--        <input type="text" name="title" id="title"/>-->
+<!--        <input type="number" name="length" id="length" />-->
+<!--        <input type="number" name="trackNumber" id="trackNumber"/>-->
+<!--        <input type="submit" />-->
+<!--    </form>-->
     <h1>listen to music</h1>
     <div th:each="song: ${songs}">
         <h2 th:text="${song.title}"></h2>

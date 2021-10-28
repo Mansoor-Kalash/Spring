@@ -30,14 +30,15 @@ public  class AlbumController {
         return new RedirectView("/allalbums");
     }
 
-    @PostMapping( "/albums/{albumId}/songs")
-    public RedirectView addDinosaur(@PathVariable Long albumId,
+    @PostMapping( "/albums/{albumId}")
+    public void addSongToAlbum(@PathVariable Long albumId,
                                     @RequestParam String title,
                                     @RequestParam int length,
                                     @RequestParam int trackNumber) {
-        Song newSong = new Song(title, length, trackNumber);
-        newSong.album = albumRepository.findById(albumId).get();
+        System.out.println("albumId"+albumId+"title"+title+"length"+length+"trackNumber"+trackNumber);
+//        Album newAlbum = albumRepository.findById(albumId).get();
+        Song newSong = new Song(title, length, trackNumber,albumId);
         songRepository.save(newSong);
-        return new RedirectView("/allalbums");
+//        return new RedirectView("/songs");
     }
 }
