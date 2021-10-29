@@ -28,9 +28,22 @@
     <div th:each="song: ${songs}">
         <h2 th:text="${song.title}"></h2>
         <h2 th:text="${song.length}"></h2>
-        <h2 th:="${song.trackNumber}"></h2>
+        <h2 th:text="${song.trackNumber}"></h2>
 
 
+    </div>
+    <div th:each="song: ${songs}">
+        <h2 th:text="${song.title}"></h2>
+        <h2 th:text="${song.length}"></h2>
+        <h2 th:text="${song.trackNumber}"></h2>
+
+
+    </div>
+    </div>
+    <div th:each="song: ${songsOfAlbum}">
+        <h2 th:text="${song.title}"></h2>
+        <h2 th:text="${song.length}"></h2>
+        <h2 th:text="${song.trackNumber}"></h2>
     </div>
 </main>
 <footer>

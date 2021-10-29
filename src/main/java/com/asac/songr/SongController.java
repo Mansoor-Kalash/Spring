@@ -14,7 +14,7 @@ public class SongController {
     public String index(Model m) {
 
         m.addAttribute("songs", songRepository.findAll());
-        return "song";
+        return "song.html";
     }
 //    @PostMapping("/addsongs")
 //    public RedirectView create(

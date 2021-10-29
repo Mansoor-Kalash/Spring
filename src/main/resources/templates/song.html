@@ -12,9 +12,9 @@
 <header>
 
     <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Comtact</li>
+        <li><a href="http://localhost:9090/songs">Home</a> </li>
+        <li><a href="http://localhost:9090/allalbums">Albums</a> </li>
+        <li><a href="#">Contact</a></li>
     </ul>
 </header>
 <main>
@@ -28,9 +28,22 @@
     <div th:each="song: ${songs}">
         <h2 th:text="${song.title}"></h2>
         <h2 th:text="${song.length}"></h2>
-        <h2 th:="${song.trackNumber}"></h2>
+        <h2 th:text="${song.trackNumber}"></h2>
 
 
+    </div>
+    <div th:each="song: ${songs}">
+        <h2 th:text="${song.title}"></h2>
+        <h2 th:text="${song.length}"></h2>
+        <h2 th:text="${song.trackNumber}"></h2>
+
+
+    </div>
+    </div>
+    <div th:each="song: ${songsOfAlbum}">
+        <h2 th:text="${song.title}"></h2>
+        <h2 th:text="${song.length}"></h2>
+        <h2 th:text="${song.trackNumber}"></h2>
     </div>
 </main>
 <footer>

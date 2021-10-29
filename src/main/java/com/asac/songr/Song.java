@@ -10,29 +10,34 @@ public class Song {
     private String title;
     private Integer length;
     private Integer trackNumber;
-    private Long albumId;
+//    private Long albumId;
     @ManyToOne
-
-//    @JoinColumn(name = "album_id")
+    @JoinColumn(name = "album_id")
      Album album;
 
     public Song(){
     }
 
-    public Song( String title, Integer length, Integer trackNumber,Long albumId) {
+    public Song( String title, Integer length, Integer trackNumber) {
         this.title = title;
         this.length = length;
         this.trackNumber = trackNumber;
-        this.albumId=albumId;
+//        this.albumId=albumId;
     }
 
-    public Long getAlbumId() {
-        return albumId;
+    public Song(String title, Integer length, Integer trackNumber, Album album) {
+        this.title = title;
+        this.length = length;
+        this.trackNumber = trackNumber;
+        this.album = album;
     }
-
-    public void setAlbumId(Long albumId) {
-        this.albumId = albumId;
-    }
+//        public Long getAlbumId() {
+//        return albumId;
+//    }
+//
+//    public void setAlbumId(Long albumId) {
+//        this.albumId = albumId;
+//    }
 
     public Long getId() {
         return id;
@@ -66,8 +71,14 @@ public class Song {
     public Album getAlbum() {
         return album;
     }
-
+//
     public void setAlbum(Album album) {
+        this.album = album;
+    }
+//    public void addAlbumToSong (Album album){
+//
+//    }
+    public void addAlbumToSong (Album album){
         this.album = album;
     }
 }

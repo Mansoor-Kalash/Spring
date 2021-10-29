@@ -7,10 +7,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.List;
+
 @Controller
 public  class AlbumController {
     @Autowired
     AlbumRepository albumRepository;
+    @Autowired
     SongRepository songRepository;
 
 
@@ -29,16 +32,28 @@ public  class AlbumController {
         albumRepository.save(album);
         return new RedirectView("/allalbums");
     }
+@GetMapping("/songsOfAlbum/{albumId}")
+public String getSonsOfAlbum (@PathVariable Long albumId,Model model){
+//    Album songsOfAlbum = new Album();
+    Album songsOfAlbum=albumRepository.findById(albumId).orElseThrow();
+//    System.out.println(songsOfAlbum.songList.get(1));
+//    =(List<Song>) songRepository.findById(albumId).orElseThrow();
+model.addAttribute("songsOfAlbum", songsOfAlbum.songList);
+    return "song";
+}
 
-    @PostMapping( "/albums/{albumId}")
-    public void addSongToAlbum(@PathVariable Long albumId,
+    @PostMapping( "/addsongs/{albumId}")
+    public RedirectView addSongToAlbum(@PathVariable Long albumId,
                                     @RequestParam String title,
                                     @RequestParam int length,
                                     @RequestParam int trackNumber) {
-        System.out.println("albumId"+albumId+"title"+title+"length"+length+"trackNumber"+trackNumber);
-//        Album newAlbum = albumRepository.findById(albumId).get();
-        Song newSong = new Song(title, length, trackNumber,albumId);
+        System.out.println("albumIdeeee"+albumId+"titleeeeee"+title+"length"+length+"trackNumber"+trackNumber);
+        Song newSong = new Song(title, length, trackNumber);
+        newSong.album = albumRepository.findById(albumId).orElseThrow();
+        newSong.album.songList.add(newSong);
         songRepository.save(newSong);
-//        return new RedirectView("/songs");
+        albumRepository.save(newSong.album);
+
+        return new RedirectView("/songs");
     }
 }

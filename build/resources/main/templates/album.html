@@ -30,18 +30,36 @@
 <!--    <input type="reset" value="Reset" />-->
 </form>
 <div th:each="album: ${albums}">
+
     <h2 th:text="${album.title}"></h2>
     <h2 th:text="${album.artist}"></h2>
     <h2 th:text="${album.songCount}"></h2>
     <h2 th:text="${album.length}"></h2>
     <img th:src="${album.imageUrl}">
+    <a th:href="@{'/songsOfAlbum/' + ${album.id}}">
+        <span>show</span>
+    </a>
+<!--    <a href=th:action="@{/songsofalbum/${album.id}}">aa</a>-->
+<!--        <button type="submit" th:name= th:value=album.id>check-in</button>-->
+        <!--        <button type="submit" th:name="action" th:value="out">check-out</button>-->
+<!--    </form>-->
+<!--    <a href="/songsofalbum/" th:number="${album.id}">view songs</a>-->
+<!--    <form action="/songsofalbum"   method="GET"><input type="number"></form>-->
+<!--    <form th:action="@{/}">-->
+<!--        <button type="submit" th:name= th:value="in">check-in</button>-->
+<!--        <button type="submit" th:name="action" th:value="out">check-out</button>-->
+<!--    </form>-->
+
+
+
+
 
 </div>
 
 <ul>
     <li th:each="album : ${albums}">
         <span th:text="${albums}"></span>
-        <form method="POST" th:action="${'/albums/' + album.id}">
+        <form method="POST" th:action="${'/addsongs/' + album.id}">
             <input type="text" name="title" id="title"/>
             <input type="number" name="length" id="length"/>
             <input type="number"  name="trackNumber" id="trackNumber"/>
