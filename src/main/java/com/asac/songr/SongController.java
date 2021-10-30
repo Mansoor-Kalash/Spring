@@ -11,18 +11,10 @@ public class SongController {
     @Autowired
     SongRepository songRepository;
     @GetMapping("/songs")
-    public String index(Model m) {
+    public String allSong(Model m) {
 
         m.addAttribute("songs", songRepository.findAll());
         return "song.html";
     }
-//    @PostMapping("/addsongs")
-//    public RedirectView create(
-//            @RequestParam String title,
-//            @RequestParam int length,
-//            @RequestParam int trackNumber) {
-//        Song newDino = new Song(title, length, trackNumber);
-//        songRepository.save(newDino);
-//        return new RedirectView("/songs");
-//    }
+
 }
