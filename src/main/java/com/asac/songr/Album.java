@@ -14,7 +14,7 @@ public class Album {
     private int songCount;
     private int length;
     private String imageUrl;
-    @OneToMany(mappedBy ="album")
+    @OneToMany(mappedBy = "album", cascade = CascadeType.ALL)
     List<Song> songList;
     public Album() {
 
