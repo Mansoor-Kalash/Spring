@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.asac.songr.AlbumTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-11-01T11:36:20" hostname="mansoors-MBP" time="0.036">
+  <properties/>
+  <testcase name="getArtist()" classname="com.asac.songr.AlbumTest" time="0.027"/>
+  <testcase name="getSongCount()" classname="com.asac.songr.AlbumTest" time="0.0"/>
+  <testcase name="getLength()" classname="com.asac.songr.AlbumTest" time="0.0"/>
+  <testcase name="getImageUrl()" classname="com.asac.songr.AlbumTest" time="0.001"/>
+  <testcase name="getTitle()" classname="com.asac.songr.AlbumTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
