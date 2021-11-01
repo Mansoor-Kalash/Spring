@@ -56,9 +56,23 @@ data of song
 
 1. AlbumRepository
 2. SongRepository
+
 ## HTML PAGES
 1. home.html
 2. album.html
-3. song.html
+
 ## css
 Home.css
+
+## instruction
+1. /allalbums
+this root for show all album
+there is a form for add album
+and form to add song for that album
+
+ 2. /hello
+this for the test
+3. /capitalize
+her any word as a query will return it as capital cas.
+3. song.html
+
