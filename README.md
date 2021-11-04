@@ -20,6 +20,72 @@
 3. /capitalize
 4. /albums
 
-* Album
-just have a proparity
+* ## Album
+data of album
+
+* ## Song
+data of song
+
+* ## AlbumController
+**method**
+
+1. addAlbum.
+2. getAllAlbums.
+3. getSonsOfAlbum.
+4. addSongToAlbum
+
+**route**
+
+1. /allalbums
+2. /addalbum
+3. /songsOfAlbum/{albumId}
+4. /addsongs/{albumId}
+
+* ## SongController
+
+**method**
+
+1. allSong
+
+
+   **route**
+
+2. songs
+
+* ## interface
+
+1. AlbumRepository
+2. SongRepository
+
+## HTML PAGES
+1. home.html
+2. album.html
+
+## css
+Home.css
+
+## instruction
+1. application properties
+
+server.port=8080
+spring.sql.init.platform=postgres
+spring.datasource.url=jdbc:postgresql://localhost:5432/ name of data base
+spring.datasource.username=user name of database
+spring.datasource.password= password for database
+spring.jpa.hibernate.ddl-auto= in first time should be "creat" then "ubdate"
+spring.sql.init.mode=always
+
+2. /allalbums
+this root for show all album
+there is a form for add album
+and form to add song for that album
+
+ 3. /hello
+this for the test
+3. /capitalize
+her any word as a query will return it as capital cas.
+3. song.html
+
+
+
 
